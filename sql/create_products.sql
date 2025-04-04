@@ -1,0 +1,22 @@
+-- Insert 20 sample products
+INSERT INTO Products (product_id, name, description, price, stock_quantity) VALUES
+(1, 'Basic T-Shirt', 'Comfortable cotton t-shirt', 19.99, 100),
+(2, 'Jeans', 'Classic blue denim jeans', 49.99, 75),
+(3, 'Sneakers', 'Casual athletic shoes', 79.99, 50),
+(4, 'Backpack', 'Durable school backpack', 29.99, 60),
+(5, 'Water Bottle', 'Stainless steel water bottle', 15.99, 120),
+(6, 'Laptop Case', 'Protective laptop sleeve', 24.99, 40),
+(7, 'Desk Lamp', 'LED desk lamp', 34.99, 30),
+(8, 'Coffee Mug', 'Ceramic coffee mug', 9.99, 200),
+(9, 'Notebook', 'Spiral-bound notebook', 4.99, 150),
+(10, 'Pencil Set', 'Set of 12 pencils', 6.99, 100),
+(11, 'Headphones', 'Wireless bluetooth headphones', 89.99, 45),
+(12, 'Mouse Pad', 'Gaming mouse pad', 12.99, 80),
+(13, 'Phone Case', 'Protective phone case', 19.99, 90),
+(14, 'USB Cable', '6ft charging cable', 8.99, 150),
+(15, 'Wall Clock', 'Modern wall clock', 22.99, 35),
+(16, 'Hand Sanitizer', 'Travel-size hand sanitizer', 3.99, 200),
+(17, 'Face Mask', 'Reusable face mask', 5.99, 300),
+(18, 'Umbrella', 'Compact folding umbrella', 16.99, 70),
+(19, 'Lunch Box', 'Insulated lunch container', 14.99, 85),
+(20, 'Keyboard', 'Wireless keyboard', 39.99, 55); 

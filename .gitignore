@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Debug tools
+debug/
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store 
+
+# Test files
+test-customer-concurrency.js
+test-*.js
+
+# Package lock
+package-lock.json
+
+# Debug and temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Test coverage
+coverage/ 
