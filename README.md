@@ -61,14 +61,24 @@ capstone/
 - GET /api/products - List all products
 - GET /api/products/:id - Get product details
 
+### Customers
+- GET /api/customers - List all customers
+- GET /api/customers/:id - Get customer details
+- POST /api/customers - Create new customer
+- PUT /api/customers/:id - Update customer information
+- DELETE /api/customers/:id - Remove customer
+
 ### Cart
-- GET /api/cart - Get cart contents
-- POST /api/cart - Add item to cart
-- DELETE /api/cart/:id - Remove item from cart
+- GET /api/cart?cart_id=X - Get cart contents
+- POST /api/cart/items - Add item to cart
+- PUT /api/cart/items/:id - Update cart item quantity
+- DELETE /api/cart/items/:id - Remove item from cart
 
 ### Orders
-- POST /api/orders - Create new order
-- GET /api/orders - List user orders
+- GET /api/orders - List all orders
+- GET /api/orders/:id - Get order details
+- POST /api/orders - Create new order from cart
+- PUT /api/orders/:id - Update order status
 
 ## Testing
 
@@ -81,11 +91,3 @@ The API implements comprehensive error handling for:
 - Database errors
 - Authentication issues
 - Resource not found
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request 
