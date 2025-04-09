@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  api:
+    image: jorenabat/swiftcart-api:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=postgresql://swiftcart_owner:npg_K5mxuelGwY0f@ep-shy-hall-a515sc8p-pooler.us-east-2.aws.neon.tech/swiftcart?sslmode=require
+    restart: unless-stopped 

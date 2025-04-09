@@ -10,6 +10,7 @@ A Node.js backend implementation for an e-commerce platform using Express.js, Se
 - Customer management
 - Database integration with neon.tech
 - Error handling and validation
+- Docker containerization for easy deployment
 
 ## Tech Stack
 
@@ -19,6 +20,7 @@ A Node.js backend implementation for an e-commerce platform using Express.js, Se
 - PostgreSQL (neon.tech)
 - REST API
 - JSON data exchange
+- Docker
 
 ## Project Structure
 
@@ -29,6 +31,8 @@ capstone/
 ├── models/         # Database models
 ├── routes/         # API routes
 ├── sql/           # SQL scripts
+├── Dockerfile     # Docker configuration
+├── docker-compose.yml # Docker Compose configuration
 └── server.js      # Main application file
 ```
 
@@ -37,8 +41,11 @@ capstone/
 - Node.js (v14 or higher)
 - npm (Node Package Manager)
 - PostgreSQL database (neon.tech account)
+- Docker (for containerization)
 
 ## Setup Instructions
+
+### Local Setup
 
 1. Clone the repository
 2. Install dependencies:
@@ -55,30 +62,51 @@ capstone/
    npm start
    ```
 
+### Docker Setup
+
+1. Clone the repository
+2. Build the Docker image:
+   ```bash
+   docker build -t swiftcart-api .
+   ```
+3. Run the container:
+   ```bash
+   docker run -p 3000:3000 -e DATABASE_URL=your_neon_tech_database_url swiftcart-api
+   ```
+
+### Docker Compose Setup
+
+1. Clone the repository
+2. Create a .env file with the required environment variables
+3. Run the container using Docker Compose:
+   ```bash
+   docker-compose up
+   ```
+
 ## API Documentation
 
 ### Products
-- GET /api/products - List all products
-- GET /api/products/:id - Get product details
+- GET /api/v1/products - List all products
+- GET /api/v1/products/:id - Get product details
 
 ### Customers
-- GET /api/customers - List all customers
-- GET /api/customers/:id - Get customer details
-- POST /api/customers - Create new customer
-- PUT /api/customers/:id - Update customer information
-- DELETE /api/customers/:id - Remove customer
+- GET /api/v1/customers - List all customers
+- GET /api/v1/customers/:id - Get customer details
+- POST /api/v1/customers - Create new customer
+- PUT /api/v1/customers/:id - Update customer information
+- DELETE /api/v1/customers/:id - Remove customer
 
 ### Cart
-- GET /api/cart?cart_id=X - Get cart contents
-- POST /api/cart/items - Add item to cart
-- PUT /api/cart/items/:id - Update cart item quantity
-- DELETE /api/cart/items/:id - Remove item from cart
+- GET /api/v1/cart?cart_id=X - Get cart contents
+- POST /api/v1/cart/items - Add item to cart
+- PUT /api/v1/cart/items/:id - Update cart item quantity
+- DELETE /api/v1/cart/items/:id - Remove item from cart
 
 ### Orders
-- GET /api/orders - List all orders
-- GET /api/orders/:id - Get order details
-- POST /api/orders - Create new order from cart
-- PUT /api/orders/:id - Update order status
+- GET /api/v1/orders - List all orders
+- GET /api/v1/orders/:id - Get order details
+- POST /api/v1/orders - Create new order from cart
+- PUT /api/v1/orders/:id - Update order status
 
 ## Testing
 
@@ -91,3 +119,16 @@ The API implements comprehensive error handling for:
 - Database errors
 - Authentication issues
 - Resource not found
+
+## Docker Hub
+
+The Docker image is available on Docker Hub:
+```
+jorenabat/swiftcart-api:latest
+```
+
+To pull and run the image:
+```bash
+docker pull jorenabat/swiftcart-api:latest
+docker run -p 3000:3000 -e DATABASE_URL=your_neon_tech_database_url jorenabat/swiftcart-api:latest
+```
